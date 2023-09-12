@@ -1,14 +1,10 @@
 class Invoice {
-    client: string;
-    amount: number;
-    details: string;
-    
 
-    constructor(c:string , a:number, d:string) {
-        this.client = c
-        this.amount = a
-        this.details = d
-    }
+    constructor(
+        readonly client: string,
+        public amount: number,
+        private details: string,
+    ) {}
 
     format() {
         return `${this.client} owes ${this.amount} for ${this.details}`
