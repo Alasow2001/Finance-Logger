@@ -16,14 +16,24 @@
     </div>
 
     <footer>
-        <form>
+        <form class="form">
             
             <div>
                 <label>Type:</label>
-                <select>
+                <select id="type">
                     <option value="invoice">Invoice</option>
                     <option value="payment">Payment</option>
                 </select>
+            </div>
+
+            <div>
+                <label>To/From:</label>
+                <input type="text" id="toFrom">
+            </div>
+
+            <div>
+                <label>Deatils:</label>
+                <input type="text" id="details">
             </div>
 
             <div>
