@@ -42,14 +42,30 @@ form.addEventListener('submit', (e: Event) => {
 
     let doc: HasFormatter
 
+    // Declaring  tuple to avoid repeating code
+    let values: [string, number, string]
+    values =  [toFrom.value, amount.valueAsNumber, details.value]
+
     // Checking whether the type of finance logged is an invoice or a payment, printing the result into the console
     if (type.value === 'invoice'){
-        doc = new Invoice(toFrom.value, amount.valueAsNumber, details.value)
+        doc = new Invoice(...values)
     } else {
-        doc = new Payment(toFrom.value, amount.valueAsNumber, details.value)
+        doc = new Payment(...values)
     }
 
     list.render(doc, type.value, 'end')
     // console.log(doc);
 })
+
+// Tuples
+// You can change the variable type inside of a tuple as long as it is initally declared 
+// let arr = ['ryu', 142, 142, false]
+// arr[0] = true
+// arr[3] = "16"
+
+// let tup: [string, number, boolean] = ["fds", 43, false]
+
+// tup[1] = 523
+// tup[0] = "532"
+
 
