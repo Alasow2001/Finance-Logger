@@ -1,4 +1,5 @@
 import {Invoice} from './classes/Invoice.js'
+import { ListTemplate } from './classes/ListTemplate.js'
 import {Payment} from './classes/Payment.js'
 import { HasFormatter } from "./interfaces/HasFormatter.js"
 
@@ -31,6 +32,10 @@ const toFrom = document.querySelector('#toFrom') as HTMLInputElement
 const details = document.querySelector('#details') as HTMLInputElement
 const amount = document.querySelector('#amount') as HTMLInputElement
 
+// Instance of List Element
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate(ul)
+
 form.addEventListener('submit', (e: Event) => {
     // Prevents the page from refreshing after the button is pressed
     e.preventDefault();
@@ -44,6 +49,7 @@ form.addEventListener('submit', (e: Event) => {
         doc = new Payment(toFrom.value, amount.valueAsNumber, details.value)
     }
 
-    console.log(doc);
+    list.render(doc, type.value, 'end')
+    // console.log(doc);
 })
 
