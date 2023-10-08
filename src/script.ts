@@ -6,14 +6,14 @@ import { HasFormatter } from "./interfaces/HasFormatter.js"
 let docOne : HasFormatter
 let docTwo: HasFormatter
 
-docOne = new Invoice("Brian", 280, "Work on the database")
-docTwo = new Payment("Liam", 300, "for his weekly wage")
+// docOne = new Invoice("Brian", 280, "Work on the database")
+// docTwo = new Payment("Liam", 300, "for his weekly wage")
 
 let docs : HasFormatter[] = []
-docs.push(docOne)
-docs.push(docTwo)
+// docs.push(docOne)
+// docs.push(docTwo)
 
-console.log(docs)
+// console.log(docs)
 
 // const firstInvoice = new Invoice('Steven', 250, 'work on website project')
 // const secondInvoice = new Invoice('Josh', 220, 'testing the website project')
